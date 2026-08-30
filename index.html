@@ -2,19 +2,19 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0">
 
+    <meta
+        name="description"
+        content="Hannah Kim | BSCS Student Portfolio">
+
     <title>Hannah Kim | Portfolio</title>
 
-    <link
-        rel="stylesheet"
-        href="style.css">
-
+    <!-- Google Fonts -->
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com">
@@ -25,946 +25,1084 @@
         crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
 
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css">
 </head>
-
 
 <body>
 
+    <!-- =====================================================
+         HEADER / NAVIGATION
+    ====================================================== -->
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+    <header class="site-header">
 
-<header class="header">
-
-    <nav class="navbar">
-
-        <a
-            href="#home"
-            class="logo">
-
-            <span>HK</span>
-
-            Hannah Kim
-
-        </a>
-
-
-        <button
-            class="menu-btn"
-            id="menuBtn"
-            type="button">
-
-            ☰
-
-        </button>
-
-
-        <div
-            class="nav-links"
-            id="navLinks">
+        <nav
+            class="navbar"
+            aria-label="Main navigation">
 
             <a
                 href="#home"
-                class="nav-link active">
-
-                Home
-
+                class="logo"
+                aria-label="Hannah Kim Home">
+                HK
             </a>
 
+            <button
+                type="button"
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks">
+                ☰
+            </button>
 
-            <a
-                href="#about"
-                class="nav-link">
+            <ul
+                class="nav-links"
+                id="navLinks">
 
-                About
+                <li>
+                    <a
+                        href="#home"
+                        class="nav-link active">
+                        Home
+                    </a>
+                </li>
 
-            </a>
+                <li>
+                    <a
+                        href="#about"
+                        class="nav-link">
+                        About
+                    </a>
+                </li>
 
+                <li>
+                    <a
+                        href="#projects"
+                        class="nav-link">
+                        Projects
+                    </a>
+                </li>
 
-            <a
-                href="#projects"
-                class="nav-link">
+                <li>
+                    <a
+                        href="#skills"
+                        class="nav-link">
+                        Skills
+                    </a>
+                </li>
 
-                Projects
+                <li>
+                    <a
+                        href="#contact"
+                        class="nav-link">
+                        Contact
+                    </a>
+                </li>
 
-            </a>
+            </ul>
 
+        </nav>
 
-            <a
-                href="#skills"
-                class="nav-link">
-
-                Skills
-
-            </a>
-
-
-            <a
-                href="#contact"
-                class="nav-link">
-
-                Contact
-
-            </a>
-
-        </div>
-
-    </nav>
-
-</header>
-
-
-
-<!-- =====================================================
-     HOME
-===================================================== -->
-
-<section
-    id="home"
-    class="hero">
-
-
-    <div class="hero-content">
-
-
-        <p class="small-title">
-
-            BSCS STUDENT • CREATIVE BUILDER
-
-        </p>
+    </header>
 
 
-        <h1>
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
 
-            Turning ideas into
-            <span>simple, useful</span>
-            digital experiences.
+    <main>
 
-        </h1>
+        <!-- =================================================
+             HOME / HERO
+        ================================================== -->
 
+        <section
+            id="home"
+            class="hero">
 
-        <p class="hero-description">
+            <div class="container">
 
-            Hi, I'm Hannah Kim. I'm a Computer Science student
-            who enjoys learning, creating, and improving one
-            project at a time.
+                <div class="hero-content">
 
-        </p>
+                    <p class="hero-eyebrow">
+                        BSCS STUDENT • CREATIVE BUILDER
+                    </p>
 
+                    <h1>
+                        Turning ideas into simple,
+                        useful digital experiences.
+                    </h1>
 
-        <div class="hero-buttons">
+                    <p class="hero-description">
+                        Hi, I’m Hannah Kim. I’m a Computer Science
+                        student who enjoys learning, creating,
+                        and improving one project at a time.
+                    </p>
 
+                    <div class="hero-buttons">
 
-            <a
-                href="#projects"
-                class="btn primary-btn">
+                        <a
+                            href="#projects"
+                            class="primary-btn">
+                            View My Projects
+                        </a>
 
-                View My Projects
+                        <a
+                            href="#contact"
+                            class="secondary-btn">
+                            Contact Me
+                        </a>
 
-            </a>
+                    </div>
 
+                    <div class="stats">
 
-            <a
-                href="#contact"
-                class="btn secondary-btn">
+                        <div class="stat">
+                            <strong>03</strong>
+                            <span>Projects</span>
+                        </div>
 
-                Contact Me
+                        <div class="stat">
+                            <strong>C++</strong>
+                            <span>Current Focus</span>
+                        </div>
 
-            </a>
+                        <div class="stat">
+                            <strong>∞</strong>
+                            <span>Learning</span>
+                        </div>
 
+                    </div>
 
-        </div>
-
-
-        <div class="stats">
-
-
-            <div>
-
-                <strong>03</strong>
-
-                <small>
-                    Projects
-                </small>
+                </div>
 
             </div>
 
+        </section>
 
-            <div>
 
-                <strong>C++</strong>
+        <!-- =================================================
+             ABOUT
+        ================================================== -->
 
-                <small>
-                    Current Focus
-                </small>
+        <section
+            id="about"
+            class="section about">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <div class="about-image">
+
+                        <img
+                            src="profile.jpg"
+                            alt="Hannah Kim profile photo">
+
+                    </div>
+
+                    <div class="about-copy">
+
+                        <p class="section-label">
+                            About Me
+                        </p>
+
+                        <h2>
+                            Learning by building.
+                        </h2>
+
+                        <p>
+                            Hi, I’m Hannah Kim, a Computer Science
+                            student who enjoys exploring programming,
+                            web development, and creative digital work.
+                        </p>
+
+                        <p>
+                            I believe that every project is an
+                            opportunity to learn something new,
+                            solve problems, and become better at
+                            what I do.
+                        </p>
+
+                        <div class="about-details">
+
+                            <div class="detail-card">
+
+                                <strong>
+                                    Education
+                                </strong>
+
+                                <span>
+                                    BSCS Student
+                                </span>
+
+                            </div>
+
+                            <div class="detail-card">
+
+                                <strong>
+                                    Focus
+                                </strong>
+
+                                <span>
+                                    C++ Programming
+                                </span>
+
+                            </div>
+
+                            <div class="detail-card">
+
+                                <strong>
+                                    Learning
+                                </strong>
+
+                                <span>
+                                    Web Development
+                                </span>
+
+                            </div>
+
+                            <div class="detail-card">
+
+                                <strong>
+                                    Goal
+                                </strong>
+
+                                <span>
+                                    Build Useful Projects
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
+        </section>
 
-            <div>
 
-                <strong>∞</strong>
+        <!-- =================================================
+             PROJECTS
+        ================================================== -->
 
-                <small>
-                    Room to Grow
-                </small>
+        <section
+            id="projects"
+            class="section projects">
+
+            <div class="container">
+
+                <div class="projects-header">
+
+                    <p class="section-label">
+                        My Work
+                    </p>
+
+                    <h2 class="section-title">
+                        Projects
+                    </h2>
+
+                    <p class="section-description">
+                        A collection of C++ programming exercises
+                        and projects created while learning
+                        programming concepts.
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+                    <!-- PROJECT 01 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Bank Account System
+                        </h3>
+
+                        <p>
+                            A C++ program demonstrating object-oriented
+                            programming through a simple bank account
+                            system with deposits, withdrawals, and
+                            balance checking.
+                        </p>
+
+                        <div class="project-meta">
+
+                            <span class="project-tag">
+                                C++
+                            </span>
+
+                            <span class="project-tag">
+                                OOP
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="view-code-btn"
+                            onclick="showCode('bank')">
+                            View Code
+                        </button>
+
+                    </article>
+
+
+                    <!-- PROJECT 02 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Personal Information
+                        </h3>
+
+                        <p>
+                            A simple C++ input program that accepts
+                            personal information and displays the
+                            collected details in a formatted output.
+                        </p>
+
+                        <div class="project-meta">
+
+                            <span class="project-tag">
+                                C++
+                            </span>
+
+                            <span class="project-tag">
+                                INPUT
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="view-code-btn"
+                            onclick="showCode('personal')">
+                            View Code
+                        </button>
+
+                    </article>
+
+
+                    <!-- PROJECT 03 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Circle Class
+                        </h3>
+
+                        <p>
+                            A C++ class-based program that calculates
+                            the area and circumference of circles
+                            using object-oriented programming.
+                        </p>
+
+                        <div class="project-meta">
+
+                            <span class="project-tag">
+                                C++
+                            </span>
+
+                            <span class="project-tag">
+                                CLASS
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="view-code-btn"
+                            onclick="showCode('circle')">
+                            View Code
+                        </button>
+
+                    </article>
+
+
+                    <!-- PROJECT 04 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Selection Sort
+                        </h3>
+
+                        <p>
+                            A C++ sorting program that uses the
+                            selection sort algorithm to arrange
+                            numbers from smallest to largest.
+                        </p>
+
+                        <div class="project-meta">
+
+                            <span class="project-tag">
+                                C++
+                            </span>
+
+                            <span class="project-tag">
+                                SORTING
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="view-code-btn"
+                            onclick="showCode('sorting')">
+                            View Code
+                        </button>
+
+                    </article>
+
+
+                    <!-- PROJECT 05 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">
+                            05
+                        </div>
+
+                        <h3>
+                            Grade Calculator
+                        </h3>
+
+                        <p>
+                            A C++ program that uses conditional
+                            statements to determine a letter grade
+                            based on a student's score.
+                        </p>
+
+                        <div class="project-meta">
+
+                            <span class="project-tag">
+                                C++
+                            </span>
+
+                            <span class="project-tag">
+                                CONDITIONS
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="view-code-btn"
+                            onclick="showCode('grade')">
+                            View Code
+                        </button>
+
+                    </article>
+
+
+                    <!-- PROJECT 06 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">
+                            06
+                        </div>
+
+                        <h3>
+                            Hello Name
+                        </h3>
+
+                        <p>
+                            A beginner-friendly C++ program that
+                            accepts a user's name and displays
+                            a personalized greeting.
+                        </p>
+
+                        <div class="project-meta">
+
+                            <span class="project-tag">
+                                C++
+                            </span>
+
+                            <span class="project-tag">
+                                INPUT
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="view-code-btn"
+                            onclick="showCode('hello')">
+                            View Code
+                        </button>
+
+                    </article>
+
+
+                    <!-- PROJECT 07 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">
+                            07
+                        </div>
+
+                        <h3>
+                            Reverse Number
+                        </h3>
+
+                        <p>
+                            A C++ program that uses loops and arithmetic
+                            operations to reverse the digits of a number.
+                        </p>
+
+                        <div class="project-meta">
+
+                            <span class="project-tag">
+                                C++
+                            </span>
+
+                            <span class="project-tag">
+                                LOOP
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="view-code-btn"
+                            onclick="showCode('reverseNumber')">
+                            View Code
+                        </button>
+
+                    </article>
+
+
+                    <!-- PROJECT 08 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">
+                            08
+                        </div>
+
+                        <h3>
+                            Square of Numbers
+                        </h3>
+
+                        <p>
+                            A C++ array program that calculates and
+                            displays the square of each number in
+                            a predefined collection.
+                        </p>
+
+                        <div class="project-meta">
+
+                            <span class="project-tag">
+                                C++
+                            </span>
+
+                            <span class="project-tag">
+                                ARRAY
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="view-code-btn"
+                            onclick="showCode('square')">
+                            View Code
+                        </button>
+
+                    </article>
+
+
+                    <!-- PROJECT 09 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">
+                            09
+                        </div>
+
+                        <h3>
+                            Total Price
+                        </h3>
+
+                        <p>
+                            A simple C++ calculation program that
+                            multiplies price and quantity to calculate
+                            the total cost.
+                        </p>
+
+                        <div class="project-meta">
+
+                            <span class="project-tag">
+                                C++
+                            </span>
+
+                            <span class="project-tag">
+                                CALCULATION
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="view-code-btn"
+                            onclick="showCode('totalPrice')">
+                            View Code
+                        </button>
+
+                    </article>
+
+
+                    <!-- PROJECT 10 -->
+
+                    <article class="project-card">
+
+                        <div class="project-number">
+                            10
+                        </div>
+
+                        <h3>
+                            Array Values
+                        </h3>
+
+                        <p>
+                            A basic C++ array program that stores
+                            several values and displays each value
+                            using a loop.
+                        </p>
+
+                        <div class="project-meta">
+
+                            <span class="project-tag">
+                                C++
+                            </span>
+
+                            <span class="project-tag">
+                                ARRAY
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="view-code-btn"
+                            onclick="showCode('arrayValues')">
+                            View Code
+                        </button>
+
+                    </article>
+
+                </div>
 
             </div>
 
-
-        </div>
-
-
-    </div>
+        </section>
 
 
-</section>
+        <!-- =================================================
+             SKILLS
+        ================================================== -->
 
+        <section
+            id="skills"
+            class="section skills">
 
+            <div class="container">
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section
-    id="about"
-    class="section about">
-
-    <div class="about-content">
-
-        <!-- LEFT SIDE -->
-        <div class="about-image">
-
-            <img
-                src="profile.jpg"
-                alt="Hannah Kim">
-
-        </div>
-
-
-        <!-- RIGHT SIDE -->
-        <div class="about-text">
-
-            <div class="section-title">
-
-                <p class="small-title">
-
-                    A LITTLE ABOUT ME
-
+                <p class="section-label">
+                    What I’m Learning
                 </p>
 
-
-                <h2>
-
-                    Learning today,
-                    building for tomorrow.
-
+                <h2 class="section-title">
+                    Skills
                 </h2>
 
-            </div>
-
-
-            <p class="about-main">
-
-                I'm a BSCS student who believes that success
-                is not about being perfect. It's about showing
-                up, learning from mistakes, and becoming better
-                every day.
-
-            </p>
-
-
-            <p>
-
-                Right now, I'm building my foundation in
-                programming and web development.
-
-                I enjoy projects that challenge me to think
-                logically while still giving me room to be
-                creative.
-
-            </p>
-
-
-            <p>
-
-                My goal is to continue improving my skills
-                and eventually create technology that is
-                genuinely helpful to people.
-
-            </p>
-
-
-            <a
-                href="#contact"
-                class="text-link">
-
-                Get in touch →
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PROJECTS
-===================================================== -->
-
-<section
-    id="projects"
-    class="projects">
-
-
-    <div class="section project-section">
-
-
-        <div class="section-title">
-
-
-            <p class="small-title">
-
-                SELECTED WORK
-
-            </p>
-
-
-            <h2>
-
-                Projects that show
-                how I think.
-
-            </h2>
-
-
-            <p class="section-description">
-
-                Simple projects, clear logic, and a focus on
-                understanding programming fundamentals.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div class="project-grid">
-
-
-            <!-- PROJECT 1 -->
-
-            <div class="project-card">
-
-
-                <div class="project-header">
-
-                    <span class="number">
-                        01
-                    </span>
-
-
-                    <span class="tag">
-                        C++ • OOP
-                    </span>
-
-                </div>
-
-
-                <h3>
-
-                    Bank Account System
-
-                </h3>
-
-
-                <p>
-
-                    A beginner-friendly object-oriented program
-                    using a BankAccount class, deposits,
-                    withdrawals, balance checking, heap
-                    allocation, and memory cleanup.
-
+                <p class="section-description">
+                    Skills I am currently developing through
+                    school, practice, and personal projects.
                 </p>
 
 
-                <button
-                    class="code-button"
-                    type="button"
-                    onclick="showCode('bank')">
+                <div class="skills-grid">
 
-                    View Code →
+                    <div class="skill-card">
 
-                </button>
+                        <h3>
+                            C++
+                        </h3>
 
+                        <p>
+                            Learning
+                        </p>
 
-            </div>
-
-
-
-            <!-- PROJECT 2 -->
-
-            <div class="project-card">
+                    </div>
 
 
-                <div class="project-header">
+                    <div class="skill-card">
 
-                    <span class="number">
-                        02
-                    </span>
+                        <h3>
+                            HTML &amp; CSS
+                        </h3>
+
+                        <p>
+                            Learning
+                        </p>
+
+                    </div>
 
 
-                    <span class="tag">
-                        C++ • INPUT
-                    </span>
+                    <div class="skill-card">
+
+                        <h3>
+                            JavaScript
+                        </h3>
+
+                        <p>
+                            Growing
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <h3>
+                            Problem Solving
+                        </h3>
+
+                        <p>
+                            Growing
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <h3>
+                            UI Design
+                        </h3>
+
+                        <p>
+                            Exploring
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <h3>
+                            Creative Thinking
+                        </h3>
+
+                        <p>
+                            Developing
+                        </p>
+
+                    </div>
 
                 </div>
 
-
-                <h3>
-
-                    Personal Information
-
-                </h3>
-
-
-                <p>
-
-                    A simple console program that accepts
-                    user input and displays formatted personal
-                    information.
-
-                </p>
-
-
-                <button
-                    class="code-button"
-                    type="button"
-                    onclick="showCode('personal')">
-
-                    View Code →
-
-                </button>
-
-
             </div>
 
+        </section>
 
 
-            <!-- PROJECT 3 -->
+        <!-- =================================================
+             CONTACT
+        ================================================== -->
 
-            <div class="project-card">
+        <section
+            id="contact"
+            class="section contact">
+
+            <div class="container">
+
+                <div class="contact-grid">
+
+                    <div class="contact-copy">
+
+                        <p class="section-label">
+                            Let’s Connect
+                        </p>
+
+                        <h2>
+                            Have a project
+                            or idea?
+                        </h2>
+
+                        <p>
+                            I’d love to hear from you. Send me
+                            a message or connect with me through
+                            Facebook.
+                        </p>
+
+                        <div class="contact-links">
+
+                            <a
+                                href="tel:+639000000000">
+                                Phone
+                            </a>
+
+                            <a
+                                href="https://www.facebook.com/share/19cxmH3i5W/"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                Facebook
+                            </a>
+
+                        </div>
+
+                    </div>
 
 
-                <div class="project-header">
+                    <form
+                        class="contact-form"
+                        id="contactForm">
 
-                    <span class="number">
-                        03
-                    </span>
+                        <div class="form-group">
+
+                            <label for="name">
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your name"
+                                autocomplete="name"
+                                required>
+
+                        </div>
 
 
-                    <span class="tag">
-                        C++ • CASTING
-                    </span>
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="message">
+                                Message
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Write your message..."
+                                required></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="form-submit">
+                            Send Message
+                        </button>
+
+                        <p
+                            id="formMessage"
+                            class="form-message"
+                            aria-live="polite"></p>
+
+                    </form>
 
                 </div>
 
+            </div>
 
-                <h3>
+        </section>
 
-                    Type Conversion Practice
+    </main>
 
-                </h3>
 
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-content">
 
                 <p>
-
-                    A C++ exercise demonstrating static_cast,
-                    integer division, floating-point values,
-                    and type conversion.
-
+                    Built with curiosity, code,
+                    and a lot of learning.
                 </p>
 
-
-                <button
-                    class="code-button"
-                    type="button"
-                    onclick="showCode('casting')">
-
-                    View Code →
-
-                </button>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     SKILLS
-===================================================== -->
-
-<section
-    id="skills"
-    class="section">
-
-
-    <div class="skills-box">
-
-
-        <div>
-
-
-            <p class="small-title">
-
-                MY TOOLKIT
-
-            </p>
-
-
-            <h2>
-
-                Skills I'm growing.
-
-            </h2>
-
-
-            <p class="skills-description">
-
-                I'm still learning, but I care about
-                understanding the basics well and turning
-                them into practical projects.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div class="skill-list">
-
-
-            <div class="skill">
-
-                <span>
-                    C++
-                </span>
-
-                <small>
-                    Learning
-                </small>
-
-            </div>
-
-
-            <div class="skill">
-
-                <span>
-                    HTML & CSS
-                </span>
-
-                <small>
-                    Learning
-                </small>
-
-            </div>
-
-
-            <div class="skill">
-
-                <span>
-                    JavaScript
-                </span>
-
-                <small>
-                    Growing
-                </small>
-
-            </div>
-
-
-            <div class="skill">
-
-                <span>
-                    Problem Solving
-                </span>
-
-                <small>
-                    Growing
-                </small>
-
-            </div>
-
-
-            <div class="skill">
-
-                <span>
-                    UI Design
-                </span>
-
-                <small>
-                    Exploring
-                </small>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section
-    id="contact"
-    class="section">
-
-
-    <div class="contact-box">
-
-
-        <div class="contact-info">
-
-
-            <p class="small-title">
-
-                LET'S CONNECT
-
-            </p>
-
-
-            <h2>
-
-                Have a project
-                or idea?
-
-            </h2>
-
-
-            <p>
-
-                I'd love to hear from you.
-                Send me a message or connect
-                with me through Facebook.
-
-            </p>
-
-
-            <div class="contact-links">
-
-
-                <a href="tel:09477985245">
-
-                    📞 0947 798 5245
-
+                <a href="#home">
+                    Back to Top ↑
                 </a>
 
+            </div>
 
-                <a
-                    href="https://www.facebook.com/share/19cxmH3i5W/"
-                    target="_blank"
-                    rel="noopener">
+        </div>
 
-                    Facebook Profile ↗
+    </footer>
 
-                </a>
 
+    <!-- =====================================================
+         CODE MODAL
+    ====================================================== -->
+
+    <div
+        class="modal"
+        id="codeModal"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="codeTitle">
+
+        <div class="modal-content">
+
+            <!-- MODAL HEADER -->
+
+            <div class="modal-header">
+
+                <h2 id="codeTitle">
+                    Project Code
+                </h2>
+
+                <button
+                    type="button"
+                    class="close-modal"
+                    id="closeModal"
+                    aria-label="Close code window">
+                    ×
+                </button>
 
             </div>
 
 
-        </div>
+            <!-- MODAL BODY -->
 
+            <div class="modal-body">
 
-
-        <form id="contactForm">
-
-
-            <label>
-
-                Name
-
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Your name"
-                    required>
-
-            </label>
-
-
-            <label>
-
-                Email
-
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="you@example.com"
-                    required>
-
-            </label>
-
-
-            <label>
-
-                Message
-
-                <textarea
-                    id="message"
-                    rows="5"
-                    placeholder="Write your message..."
-                    required></textarea>
-
-            </label>
-
-
-            <button
-                type="submit"
-                class="btn primary-btn">
-
-                Send Message
-
-            </button>
-
-
-            <p id="formMessage"></p>
-
-
-        </form>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-
-    <div class="footer-content">
-
-
-        <div>
-
-
-            <a
-                href="#home"
-                class="logo">
-
-                <span>HK</span>
-
-                Hannah Kim
-
-            </a>
-
-
-            <p>
-
-                Built with curiosity, code,
-                and a lot of learning.
-
-            </p>
-
-
-        </div>
-
-
-        <a href="#home">
-
-            Back to Top ↑
-
-        </a>
-
-
-    </div>
-
-
-</footer>
-
-
-
-<!-- =====================================================
-     CODE / RUN MODAL
-===================================================== -->
-
-<div
-    id="codeModal"
-    class="modal">
-
-
-    <div class="modal-content">
-
-
-        <button
-            class="close-modal"
-            id="closeModal"
-            type="button">
-
-            ×
-
-        </button>
-
-
-        <p class="small-title">
-
-            C++ PROGRAM
-
-        </p>
-
-
-        <h2 id="codeTitle">
-
-            Project
-
-        </h2>
-
-
-
-        <!-- INPUT AREA -->
-
-        <div
-            id="programInputs"
-            class="program-inputs">
-
-        </div>
-
-
-
-        <!-- RUN / RESET -->
-
-        <div class="runner-buttons">
-
-
-            <button
-                id="runButton"
-                class="run-program-button"
-                type="button">
-
-                ▶ Run Program
-
-            </button>
-
-
-            <button
-                id="resetButton"
-                class="reset-button"
-                type="button">
-
-                ↻ Reset
-
-            </button>
-
-
-        </div>
-
-
-
-        <!-- TERMINAL -->
-
-        <div class="terminal">
-
-
-            <div class="terminal-bar">
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-
-                <small id="terminalName">
-
+                <p
+                    class="terminal-name"
+                    id="terminalName">
                     program.cpp
+                </p>
 
-                </small>
 
+                <!-- SOURCE CODE -->
+
+                <pre
+                    class="code-display"
+                    id="codeDisplay"></pre>
+
+
+                <!-- PROGRAM INPUTS -->
+
+                <div
+                    class="program-inputs"
+                    id="programInputs">
+                </div>
+
+
+                <!-- MODAL ACTIONS -->
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="run-button"
+                        id="runButton">
+                        Run Program
+                    </button>
+
+                    <button
+                        type="button"
+                        class="reset-button"
+                        id="resetButton">
+                        Reset
+                    </button>
+
+                    <button
+                        type="button"
+                        class="copy-button"
+                        id="copyButton">
+                        Copy Code
+                    </button>
+
+                </div>
+
+
+                <!-- COPY MESSAGE -->
+
+                <p
+                    class="copy-message"
+                    id="copyMessage"
+                    aria-live="polite">
+                </p>
+
+
+                <!-- PROGRAM OUTPUT -->
+
+                <pre
+                    class="run-output"
+                    id="runOutput">Ready to run program...</pre>
 
             </div>
 
-
-            <pre
-                id="runOutput"
-                class="run-output">Ready to run program...</pre>
-
-
         </div>
-
-
-
-        <!-- SOURCE CODE -->
-
-        <div class="source-header">
-
-
-            <span>
-
-                Source Code
-
-            </span>
-
-
-            <button
-                id="copyButton"
-                class="copy-button"
-                type="button">
-
-                Copy Code
-
-            </button>
-
-
-        </div>
-
-
-        <pre
-            class="source-code"><code id="codeDisplay"></code></pre>
-
-
-        <p
-            id="copyMessage"
-            class="copy-message"></p>
-
 
     </div>
 
 
-</div>
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
 
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
