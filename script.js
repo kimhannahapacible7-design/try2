@@ -1,190 +1,39 @@
 /* =========================================================
    HANNAH KIM PORTFOLIO
-   JAVASCRIPT
+   SCRIPT.JS
 ========================================================= */
 
 
 /* =========================================================
-   MOBILE NAVIGATION
-========================================================= */
-
-const menuBtn =
-    document.getElementById("menuBtn");
-
-const navLinks =
-    document.getElementById("navLinks");
-
-
-if (menuBtn && navLinks) {
-
-    menuBtn.addEventListener(
-        "click",
-        function () {
-
-            navLinks.classList.toggle("show");
-
-        }
-    );
-
-}
-
-
-document
-    .querySelectorAll(".nav-link")
-    .forEach(function (link) {
-
-        link.addEventListener(
-            "click",
-            function () {
-
-                if (navLinks) {
-
-                    navLinks.classList.remove(
-                        "show"
-                    );
-
-                }
-
-            }
-        );
-
-    });
-
-
-
-/* =========================================================
-   ACTIVE NAVIGATION
-========================================================= */
-
-const sections =
-    document.querySelectorAll("section");
-
-const navItems =
-    document.querySelectorAll(".nav-link");
-
-
-window.addEventListener(
-    "scroll",
-    function () {
-
-        let currentSection = "";
-
-
-        sections.forEach(
-            function (section) {
-
-                const top =
-                    section.offsetTop - 180;
-
-                const bottom =
-                    top + section.offsetHeight;
-
-
-                if (
-                    window.scrollY >= top &&
-                    window.scrollY < bottom
-                ) {
-
-                    currentSection =
-                        section.id;
-
-                }
-
-            }
-        );
-
-
-        navItems.forEach(
-            function (link) {
-
-                link.classList.remove(
-                    "active"
-                );
-
-
-                if (
-                    link.getAttribute("href") ===
-                    "#" + currentSection
-                ) {
-
-                    link.classList.add(
-                        "active"
-                    );
-
-                }
-
-            }
-        );
-
-    }
-);
-
-
-
-/* =========================================================
-   PROJECT CODE
+   PROJECT CODES
 ========================================================= */
 
 const projectCodes = {
 
-
     bank: {
-
-        title:
-            "Bank Account Management",
-
-        terminal:
-            "bank_account.cpp",
-
+        title: "Bank Account System",
+        terminal: "bank_account.cpp",
 
         inputs: [
-
             {
-                id:
-                    "initialDeposit",
-
-                label:
-                    "Initial Deposit",
-
-                type:
-                    "number",
-
-                value:
-                    "1000"
+                id: "initialDeposit",
+                label: "Initial Deposit",
+                type: "number",
+                value: "1000"
             },
-
-
             {
-                id:
-                    "depositAmount",
-
-                label:
-                    "Deposit Amount",
-
-                type:
-                    "number",
-
-                value:
-                    "250"
+                id: "depositAmount",
+                label: "Deposit Amount",
+                type: "number",
+                value: "250"
             },
-
-
             {
-                id:
-                    "withdrawAmount",
-
-                label:
-                    "Withdraw Amount",
-
-                type:
-                    "number",
-
-                value:
-                    "100"
+                id: "withdrawAmount",
+                label: "Withdraw Amount",
+                type: "number",
+                value: "100"
             }
-
         ],
-
 
         code: `#include <iostream>
 using namespace std;
@@ -195,201 +44,115 @@ private:
 
     double balance;
 
-
 public:
 
     BankAccount(double initDeposit) {
-
         balance = initDeposit;
-
     }
-
 
     void deposit(double amount) {
-
         balance += amount;
-
     }
-
 
     bool withdraw(double amount) {
 
         if (amount > balance) {
-
             return false;
-
         }
 
         balance -= amount;
-
         return true;
-
     }
-
 
     double getBalance() {
-
         return balance;
-
     }
-
 };
-
 
 int main() {
 
     BankAccount* acc1 =
         new BankAccount(1000.0);
 
-
     BankAccount* acc2 =
         new BankAccount(700.0);
 
-
-    // Testing acc1
-
     acc1->deposit(250.0);
-
     acc1->withdraw(100.0);
-
 
     cout << "Account 1 balance: "
          << acc1->getBalance()
          << endl;
 
-
-    // Testing acc2
-
     acc2->deposit(300.0);
-
     acc2->withdraw(100.0);
-
 
     cout << "Account 2 balance: "
          << acc2->getBalance()
          << endl;
 
-
-    // Deallocate memory
-
     delete acc1;
-
     delete acc2;
 
-
     return 0;
-
 }`
-
     },
 
 
     personal: {
-
-        title:
-            "Personal Information",
-
-        terminal:
-            "personal_information.cpp",
-
+        title: "Personal Information",
+        terminal: "personal_information.cpp",
 
         inputs: [
-
             {
-                id:
-                    "firstName",
-
-                label:
-                    "First Name",
-
-                type:
-                    "text",
-
-                value:
-                    ""
+                id: "firstName",
+                label: "First Name",
+                type: "text",
+                value: ""
             },
-
-
             {
-                id:
-                    "middleName",
-
-                label:
-                    "Middle Name",
-
-                type:
-                    "text",
-
-                value:
-                    ""
+                id: "middleName",
+                label: "Middle Name",
+                type: "text",
+                value: ""
             },
-
-
             {
-                id:
-                    "age",
-
-                label:
-                    "Age",
-
-                type:
-                    "number",
-
-                value:
-                    ""
+                id: "age",
+                label: "Age",
+                type: "number",
+                value: ""
             },
-
-
             {
-                id:
-                    "weight",
-
-                label:
-                    "Weight",
-
-                type:
-                    "number",
-
-                value:
-                    ""
+                id: "weight",
+                label: "Weight",
+                type: "number",
+                value: ""
             }
-
         ],
 
-
         code: `#include <iostream>
+#include <string>
+
 using namespace std;
 
 int main()
 {
-
-    cout << "Enter your First Name: ";
-
     string firstName;
-
-    cin >> firstName;
-
-
-    cout << "Enter your Middle name: ";
-
     string middleName;
-
-    cin >> middleName;
-
-
-    cout << "Age: ";
-
     int age;
-
-    cin >> age;
-
-
-    cout << "Enter your Weight: ";
-
     int weight;
 
-    cin >> weight;
+    cout << "Enter your First Name: ";
+    cin >> firstName;
 
+    cout << "Enter your Middle name: ";
+    cin >> middleName;
+
+    cout << "Age: ";
+    cin >> age;
+
+    cout << "Enter your Weight: ";
+    cin >> weight;
 
     cout << "Full Name: "
          << firstName
@@ -397,337 +160,482 @@ int main()
          << middleName
          << endl;
 
-
     cout << "Age: "
          << age
          << endl;
-
 
     cout << "Weight: "
          << weight
          << endl;
 
-
     return 0;
-
 }`
-
     },
 
 
-    casting: {
+    circle: {
+        title: "Circle Class",
+        terminal: "circle.cpp",
 
-        title:
-            "Type Conversion Practice",
-
-        terminal:
-            "type_conversion.cpp",
-
-
-        inputs: [],
-
+        inputs: [
+            {
+                id: "radius1",
+                label: "Circle 1 Radius",
+                type: "number",
+                value: "5"
+            },
+            {
+                id: "radius2",
+                label: "Circle 2 Radius",
+                type: "number",
+                value: "7.5"
+            }
+        ],
 
         code: `#include <iostream>
+
+using namespace std;
+
+class Circle {
+
+private:
+
+    float radius;
+
+public:
+
+    Circle(float _radius) {
+        radius = _radius;
+    }
+
+    void setRadius(int _radius) {
+        radius = _radius;
+    }
+
+    float getRadius() {
+        return radius;
+    }
+
+    float getArea() {
+        return 3.14159f * radius * radius;
+    }
+
+    float getCircumference() {
+        return 2 * 3.14159f * radius;
+    }
+};
+
+int main() {
+
+    Circle circle1(5.0f);
+    Circle circle2(7.5f);
+
+    cout << "Circle 1 - Radius: "
+         << circle1.getRadius()
+         << endl;
+
+    cout << "Circle 1 - Area: "
+         << circle1.getArea()
+         << endl;
+
+    cout << "Circle 1 - Circumference: "
+         << circle1.getCircumference()
+         << endl;
+
+    cout << "Circle 2 - Radius: "
+         << circle2.getRadius()
+         << endl;
+
+    cout << "Circle 2 - Area: "
+         << circle2.getArea()
+         << endl;
+
+    cout << "Circle 2 - Circumference: "
+         << circle2.getCircumference()
+         << endl;
+
+    return 0;
+}`
+    },
+
+
+    sorting: {
+        title: "Selection Sort",
+        terminal: "selection_sort.cpp",
+
+        inputs: [
+            {
+                id: "arraySize",
+                label: "Array Size",
+                type: "number",
+                value: "5"
+            },
+            {
+                id: "arrayElements",
+                label: "Array Elements",
+                type: "text",
+                value: "5 3 8 1 4"
+            }
+        ],
+
+        code: `#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    int size;
+    int arr[50];
+    int i, j, temp;
+
+    cout << "Enter array size: ";
+    cin >> size;
+
+    if (size <= 0 || size > 50) {
+
+        cout
+            << "Invalid array size. "
+            << "Size must be between 1 and 50."
+            << endl;
+
+        return 1;
+    }
+
+    cout << "Enter array elements: ";
+
+    for (i = 0; i < size; i++) {
+        cin >> arr[i];
+    }
+
+    cout
+        << "Sorting array using selection sort..."
+        << endl;
+
+    for (i = 0; i < size; i++) {
+
+        for (j = i + 1; j < size; j++) {
+
+            if (arr[i] > arr[j]) {
+
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    cout << "The sorted array is:" << endl;
+
+    for (i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
+
+    return 0;
+}`
+    },
+
+
+    grade: {
+        title: "Grade Calculator",
+        terminal: "grade.cpp",
+
+        inputs: [
+            {
+                id: "score",
+                label: "Score",
+                type: "number",
+                value: "90"
+            }
+        ],
+
+        code: `#include <iostream>
+
 using namespace std;
 
 int main()
 {
+    int score;
 
-    cout << "static_cast<int>(7.9) = "
-         << static_cast<int>(7.9)
-         << endl;
+    cout << "Enter score: ";
+    cin >> score;
 
-
-    cout << "static_cast<int>(3.3) = "
-         << static_cast<int>(3.3)
-         << endl;
-
-
-    cout << "static_cast<double>(25) = "
-         << static_cast<double>(25)
-         << endl;
-
-
-    cout << "static_cast<int>"
-            "(7.8 + static_cast<double>"
-            "(15 / 2)) = "
-         << static_cast<int>(
-                7.8 +
-                static_cast<double>(15 / 2)
-            )
-         << endl;
-
+    if (score >= 90)
+    {
+        cout << "Grade: A";
+    }
+    else if (score >= 80)
+    {
+        cout << "Grade: B";
+    }
+    else if (score >= 70)
+    {
+        cout << "Grade: C";
+    }
+    else if (score >= 60)
+    {
+        cout << "Grade: D";
+    }
+    else
+    {
+        cout << "Grade: F";
+    }
 
     return 0;
-
 }`
+    },
 
+
+    hello: {
+        title: "Hello Name",
+        terminal: "hello_name.cpp",
+
+        inputs: [
+            {
+                id: "name",
+                label: "Name",
+                type: "text",
+                value: ""
+            }
+        ],
+
+        code: `#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string name;
+
+    cout << "Enter your name: ";
+    cin >> name;
+
+    cout << "Hello, "
+         << name
+         << "!";
+
+    return 0;
+}`
+    },
+
+
+    reverseNumber: {
+        title: "Reverse Number",
+        terminal: "reverse_number.cpp",
+
+        inputs: [
+            {
+                id: "number",
+                label: "Number",
+                type: "number",
+                value: "12345"
+            }
+        ],
+
+        code: `#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int number;
+    int reverse = 0;
+    int remainder;
+
+    cout << "Enter a number: ";
+    cin >> number;
+
+    while (number != 0)
+    {
+        remainder = number % 10;
+
+        reverse =
+            reverse * 10 + remainder;
+
+        number =
+            number / 10;
+    }
+
+    cout << "Reverse number: "
+         << reverse
+         << endl;
+
+    return 0;
+}`
+    },
+
+
+    square: {
+        title: "Square of Numbers",
+        terminal: "square_numbers.cpp",
+
+        inputs: [],
+
+        code: `#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int numbers[5] =
+    {
+        1, 2, 3, 4, 5
+    };
+
+    int square;
+
+    for (int i = 0; i < 5; i++)
+    {
+        square =
+            numbers[i] * numbers[i];
+
+        cout << square
+             << endl;
+    }
+
+    return 0;
+}`
+    },
+
+
+    totalPrice: {
+        title: "Total Price",
+        terminal: "total_price.cpp",
+
+        inputs: [],
+
+        code: `#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float price = 99.50f;
+    float quantity = 3.0f;
+    float total;
+
+    total =
+        price * quantity;
+
+    cout << "Price: "
+         << price
+         << endl;
+
+    cout << "Quantity: "
+         << quantity
+         << endl;
+
+    cout << "Total: "
+         << total
+         << endl;
+
+    return 0;
+}`
+    },
+
+
+    arrayValues: {
+        title: "Array Values",
+        terminal: "array_values.cpp",
+
+        inputs: [],
+
+        code: `#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int numbers[5] =
+    {
+        10, 20, 30, 40, 50
+    };
+
+    cout << "Array values:"
+         << endl;
+
+    for (int i = 0; i < 5; i++)
+    {
+        cout << numbers[i]
+             << endl;
+    }
+
+    return 0;
+}`
     }
 
 };
 
 
-
 /* =========================================================
-   MODAL ELEMENTS
+   DOM ELEMENTS
 ========================================================= */
-
-const modal =
-    document.getElementById(
-        "codeModal"
-    );
-
-
-const codeTitle =
-    document.getElementById(
-        "codeTitle"
-    );
-
-
-const codeDisplay =
-    document.getElementById(
-        "codeDisplay"
-    );
-
-
-const programInputs =
-    document.getElementById(
-        "programInputs"
-    );
-
-
-const runButton =
-    document.getElementById(
-        "runButton"
-    );
-
-
-const resetButton =
-    document.getElementById(
-        "resetButton"
-    );
-
-
-const runOutput =
-    document.getElementById(
-        "runOutput"
-    );
-
-
-const copyButton =
-    document.getElementById(
-        "copyButton"
-    );
-
-
-const copyMessage =
-    document.getElementById(
-        "copyMessage"
-    );
-
-
-const terminalName =
-    document.getElementById(
-        "terminalName"
-    );
-
-
-const closeModalButton =
-    document.getElementById(
-        "closeModal"
-    );
-
 
 let currentProject = null;
 
+const modal =
+    document.getElementById("codeModal");
+
+const codeTitle =
+    document.getElementById("codeTitle");
+
+const codeDisplay =
+    document.getElementById("codeDisplay");
+
+const programInputs =
+    document.getElementById("programInputs");
+
+const runButton =
+    document.getElementById("runButton");
+
+const resetButton =
+    document.getElementById("resetButton");
+
+const runOutput =
+    document.getElementById("runOutput");
+
+const copyButton =
+    document.getElementById("copyButton");
+
+const copyMessage =
+    document.getElementById("copyMessage");
+
+const terminalName =
+    document.getElementById("terminalName");
+
+const closeModalButton =
+    document.getElementById("closeModal");
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+const contactForm =
+    document.getElementById("contactForm");
+
+const formMessage =
+    document.getElementById("formMessage");
 
 
 /* =========================================================
-   SHOW CODE
-========================================================= */
-
-function showCode(projectName) {
-
-
-    const project =
-        projectCodes[projectName];
-
-
-    if (!project) {
-
-        console.error(
-            "Project not found:",
-            projectName
-        );
-
-        return;
-
-    }
-
-
-    currentProject =
-        projectName;
-
-
-    codeTitle.textContent =
-        project.title;
-
-
-    codeDisplay.textContent =
-        project.code;
-
-
-    terminalName.textContent =
-        project.terminal;
-
-
-    createInputFields(
-        project.inputs
-    );
-
-
-    resetProgram();
-
-
-    modal.classList.add(
-        "show"
-    );
-
-
-    document.body.style.overflow =
-        "hidden";
-
-}
-
-
-
-/* =========================================================
-   CREATE INPUT FIELDS
-========================================================= */
-
-function createInputFields(inputs) {
-
-
-    programInputs.innerHTML = "";
-
-
-    if (
-        !inputs ||
-        inputs.length === 0
-    ) {
-
-        programInputs.innerHTML = `
-
-            <div class="no-input-message">
-
-                This program does not require
-                user input.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    inputs.forEach(
-        function (input) {
-
-
-            const wrapper =
-                document.createElement(
-                    "div"
-                );
-
-
-            wrapper.className =
-                "program-input-row";
-
-
-            const label =
-                document.createElement(
-                    "label"
-                );
-
-
-            label.textContent =
-                input.label;
-
-
-            const field =
-                document.createElement(
-                    "input"
-                );
-
-
-            field.id =
-                "input_" + input.id;
-
-
-            field.type =
-                input.type;
-
-
-            field.value =
-                input.value || "";
-
-
-            field.placeholder =
-                "Enter " +
-                input.label;
-
-
-            field.autocomplete =
-                "off";
-
-
-            wrapper.appendChild(
-                label
-            );
-
-
-            wrapper.appendChild(
-                field
-            );
-
-
-            programInputs.appendChild(
-                wrapper
-            );
-
-        }
-    );
-
-}
-
-
-
-/* =========================================================
-   GET USER INPUT
+   GET INPUT VALUE
 ========================================================= */
 
 function getInputValue(id) {
 
+    const input =
+        document.getElementById("input_" + id);
 
-    const field =
-        document.getElementById(
-            "input_" + id
-        );
-
-
-    if (!field) {
-
+    if (!input) {
         return "";
-
     }
 
-
-    return field.value.trim();
-
+    return input.value.trim();
 }
-
 
 
 /* =========================================================
@@ -737,244 +645,329 @@ function getInputValue(id) {
 function escapeCppString(value) {
 
     return String(value)
-
-        .replace(
-            /\\/g,
-            "\\\\"
-        )
-
-        .replace(
-            /"/g,
-            '\\"'
-        )
-
-        .replace(
-            /\r?\n/g,
-            "\\n"
-        );
-
+        .replace(/\\/g, "\\\\")
+        .replace(/"/g, '\\"')
+        .replace(/\r?\n/g, "\\n");
 }
 
+
+/* =========================================================
+   CREATE INPUT FIELDS
+========================================================= */
+
+function createInputFields(inputs) {
+
+    if (!programInputs) {
+        return;
+    }
+
+    programInputs.innerHTML = "";
+
+    if (
+        !Array.isArray(inputs) ||
+        inputs.length === 0
+    ) {
+
+        const message =
+            document.createElement("div");
+
+        message.className =
+            "no-input-message";
+
+        message.textContent =
+            "This program does not require user input.";
+
+        programInputs.appendChild(message);
+
+        return;
+    }
+
+    inputs.forEach(function (input) {
+
+        const wrapper =
+            document.createElement("div");
+
+        wrapper.className =
+            "program-input-row";
+
+        const label =
+            document.createElement("label");
+
+        label.setAttribute(
+            "for",
+            "input_" + input.id
+        );
+
+        label.textContent =
+            input.label;
+
+        const field =
+            document.createElement("input");
+
+        field.id =
+            "input_" + input.id;
+
+        field.name =
+            "input_" + input.id;
+
+        field.type =
+            input.type || "text";
+
+        field.value =
+            input.value || "";
+
+        field.placeholder =
+            "Enter " + input.label;
+
+        if (input.type === "number") {
+            field.step = "any";
+        }
+
+        wrapper.appendChild(label);
+        wrapper.appendChild(field);
+
+        programInputs.appendChild(wrapper);
+    });
+}
+
+
+/* =========================================================
+   SHOW CODE
+========================================================= */
+
+function showCode(projectName) {
+
+    const project =
+        projectCodes[projectName];
+
+    if (!project) {
+
+        console.error(
+            "Project not found:",
+            projectName
+        );
+
+        return;
+    }
+
+    currentProject =
+        projectName;
+
+    if (codeTitle) {
+        codeTitle.textContent =
+            project.title;
+    }
+
+    if (codeDisplay) {
+        codeDisplay.textContent =
+            project.code;
+    }
+
+    if (terminalName) {
+        terminalName.textContent =
+            project.terminal;
+    }
+
+    createInputFields(
+        project.inputs
+    );
+
+    resetProgram();
+
+    if (modal) {
+
+        modal.classList.add("show");
+
+        modal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.style.overflow =
+            "hidden";
+    }
+}
 
 
 /* =========================================================
    PREPARE RUNTIME CODE
 ========================================================= */
 
-function prepareRuntimeCode(
-    projectName
-) {
+function prepareRuntimeCode(projectName) {
 
+    const project =
+        projectCodes[projectName];
 
-    const originalCode =
-        projectCodes[
-            projectName
-        ].code;
+    if (!project) {
+        throw new Error(
+            "Project not found."
+        );
+    }
 
-
-    let runtimeCode =
-        originalCode;
-
+    let code =
+        project.code;
 
 
     /* =====================================================
        BANK ACCOUNT
     ===================================================== */
 
-    if (
-        projectName === "bank"
-    ) {
+    if (projectName === "bank") {
 
-
-        const initialDeposit =
+        const initial =
             getInputValue(
                 "initialDeposit"
             );
 
-
-        const depositAmount =
+        const deposit =
             getInputValue(
                 "depositAmount"
             );
 
-
-        const withdrawAmount =
+        const withdraw =
             getInputValue(
                 "withdrawAmount"
             );
 
-
         if (
-
-            initialDeposit === "" ||
-
-            depositAmount === "" ||
-
-            withdrawAmount === ""
-
+            initial === "" ||
+            deposit === "" ||
+            withdraw === ""
         ) {
 
             throw new Error(
-                "Please fill in all Bank Account fields."
+                "Please fill in all fields."
             );
-
         }
 
+        const initialNumber =
+            Number(initial);
+
+        const depositNumber =
+            Number(deposit);
+
+        const withdrawNumber =
+            Number(withdraw);
 
         if (
-
-            !Number.isFinite(
-                Number(initialDeposit)
-            ) ||
-
-            !Number.isFinite(
-                Number(depositAmount)
-            ) ||
-
-            !Number.isFinite(
-                Number(withdrawAmount)
-            )
-
+            !Number.isFinite(initialNumber) ||
+            !Number.isFinite(depositNumber) ||
+            !Number.isFinite(withdrawNumber)
         ) {
 
             throw new Error(
                 "Please enter valid numbers."
             );
-
         }
 
+        if (
+            initialNumber < 0 ||
+            depositNumber < 0 ||
+            withdrawNumber < 0
+        ) {
 
-        runtimeCode =
-            runtimeCode.replace(
-
-                "new BankAccount(1000.0)",
-
-                "new BankAccount(" +
-                Number(initialDeposit) +
-                ")"
-
+            throw new Error(
+                "Amounts cannot be negative."
             );
+        }
 
+        code = code.replace(
+            "new BankAccount(1000.0)",
+            "new BankAccount(" +
+            initialNumber +
+            ")"
+        );
 
-        runtimeCode =
-            runtimeCode.replace(
+        code = code.replace(
+            "acc1->deposit(250.0);",
+            "acc1->deposit(" +
+            depositNumber +
+            ");"
+        );
 
-                "acc1->deposit(250.0);",
-
-                "acc1->deposit(" +
-                Number(depositAmount) +
-                ");"
-
-            );
-
-
-        runtimeCode =
-            runtimeCode.replace(
-
-                "acc1->withdraw(100.0);",
-
-                "acc1->withdraw(" +
-                Number(withdrawAmount) +
-                ");"
-
-            );
-
+        code = code.replace(
+            "acc1->withdraw(100.0);",
+            "acc1->withdraw(" +
+            withdrawNumber +
+            ");"
+        );
     }
-
 
 
     /* =====================================================
        PERSONAL INFORMATION
     ===================================================== */
 
-    if (
-        projectName === "personal"
-    ) {
-
+    else if (projectName === "personal") {
 
         const firstName =
-            getInputValue(
-                "firstName"
-            );
-
+            getInputValue("firstName");
 
         const middleName =
-            getInputValue(
-                "middleName"
-            );
-
+            getInputValue("middleName");
 
         const age =
-            getInputValue(
-                "age"
-            );
-
+            getInputValue("age");
 
         const weight =
-            getInputValue(
-                "weight"
-            );
-
+            getInputValue("weight");
 
         if (
-
             firstName === "" ||
-
             middleName === "" ||
-
             age === "" ||
-
             weight === ""
-
         ) {
 
             throw new Error(
-                "Please fill in all Personal Information fields."
+                "Please fill in all fields."
             );
-
         }
 
+        const ageNumber =
+            Number(age);
+
+        const weightNumber =
+            Number(weight);
 
         if (
-
-            !Number.isInteger(
-                Number(age)
-            ) ||
-
-            !Number.isInteger(
-                Number(weight)
-            )
-
+            !Number.isInteger(ageNumber) ||
+            !Number.isInteger(weightNumber)
         ) {
 
             throw new Error(
-                "Age and Weight must be valid whole numbers."
+                "Age and Weight must be whole numbers."
             );
-
         }
 
+        if (
+            ageNumber < 0 ||
+            weightNumber < 0
+        ) {
 
-        runtimeCode = `#include <iostream>
+            throw new Error(
+                "Age and Weight cannot be negative."
+            );
+        }
+
+        code = `#include <iostream>
+#include <string>
+
 using namespace std;
 
 int main()
 {
-
     string firstName =
         "${escapeCppString(firstName)}";
-
 
     string middleName =
         "${escapeCppString(middleName)}";
 
-
     int age =
-        ${Number(age)};
-
+        ${ageNumber};
 
     int weight =
-        ${Number(weight)};
-
+        ${weightNumber};
 
     cout << "Full Name: "
          << firstName
@@ -982,28 +975,399 @@ int main()
          << middleName
          << endl;
 
-
     cout << "Age: "
          << age
          << endl;
-
 
     cout << "Weight: "
          << weight
          << endl;
 
-
     return 0;
-
 }`;
-
     }
 
 
-    return runtimeCode;
+    /* =====================================================
+       CIRCLE
+    ===================================================== */
 
+    else if (projectName === "circle") {
+
+        const radius1 =
+            getInputValue("radius1");
+
+        const radius2 =
+            getInputValue("radius2");
+
+        if (
+            radius1 === "" ||
+            radius2 === ""
+        ) {
+
+            throw new Error(
+                "Please enter both radius values."
+            );
+        }
+
+        const r1 =
+            Number(radius1);
+
+        const r2 =
+            Number(radius2);
+
+        if (
+            !Number.isFinite(r1) ||
+            !Number.isFinite(r2)
+        ) {
+
+            throw new Error(
+                "Please enter valid radius values."
+            );
+        }
+
+        if (
+            r1 < 0 ||
+            r2 < 0
+        ) {
+
+            throw new Error(
+                "Radius cannot be negative."
+            );
+        }
+
+        code = code.replace(
+            "Circle circle1(5.0f);",
+            "Circle circle1(" +
+            r1 +
+            "f);"
+        );
+
+        code = code.replace(
+            "Circle circle2(7.5f);",
+            "Circle circle2(" +
+            r2 +
+            "f);"
+        );
+    }
+
+
+    /* =====================================================
+       SELECTION SORT
+    ===================================================== */
+
+    else if (projectName === "sorting") {
+
+        const sizeText =
+            getInputValue("arraySize");
+
+        const elements =
+            getInputValue("arrayElements");
+
+        if (sizeText === "") {
+
+            throw new Error(
+                "Please enter the array size."
+            );
+        }
+
+        const size =
+            Number(sizeText);
+
+        if (
+            !Number.isInteger(size) ||
+            size < 1 ||
+            size > 50
+        ) {
+
+            throw new Error(
+                "Array size must be between 1 and 50."
+            );
+        }
+
+        if (elements === "") {
+
+            throw new Error(
+                "Please enter the array elements."
+            );
+        }
+
+        const values =
+            elements
+                .split(/\s+/)
+                .filter(Boolean);
+
+        if (values.length !== size) {
+
+            throw new Error(
+                "Please enter exactly " +
+                size +
+                " array elements."
+            );
+        }
+
+        const numbers =
+            values.map(Number);
+
+        if (
+            numbers.some(function (value) {
+                return !Number.isFinite(value);
+            })
+        ) {
+
+            throw new Error(
+                "Array elements must be valid numbers."
+            );
+        }
+
+        if (
+            numbers.some(function (value) {
+                return !Number.isInteger(value);
+            })
+        ) {
+
+            throw new Error(
+                "Array elements must be whole numbers."
+            );
+        }
+
+        code = `#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    int size = ${size};
+
+    int arr[50] =
+    {
+        ${numbers.join(", ")}
+    };
+
+    int i, j, temp;
+
+    cout << "Array size: "
+         << size
+         << endl;
+
+    cout << "Array elements: ";
+
+    for (i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
+
+    cout
+        << "Sorting array using selection sort..."
+        << endl;
+
+    for (i = 0; i < size; i++) {
+
+        for (j = i + 1; j < size; j++) {
+
+            if (arr[i] > arr[j]) {
+
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    cout << "The sorted array is:"
+         << endl;
+
+    for (i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
+
+    return 0;
+}`;
+    }
+
+
+    /* =====================================================
+       GRADE
+    ===================================================== */
+
+    else if (projectName === "grade") {
+
+        const scoreText =
+            getInputValue("score");
+
+        if (scoreText === "") {
+
+            throw new Error(
+                "Please enter a score."
+            );
+        }
+
+        const score =
+            Number(scoreText);
+
+        if (
+            !Number.isInteger(score) ||
+            score < 0 ||
+            score > 100
+        ) {
+
+            throw new Error(
+                "Score must be a whole number from 0 to 100."
+            );
+        }
+
+        code = code.replace(
+            "cin >> score;",
+            "score = " +
+            score +
+            ";"
+        );
+    }
+
+
+    /* =====================================================
+       HELLO NAME
+    ===================================================== */
+
+    else if (projectName === "hello") {
+
+        const name =
+            getInputValue("name");
+
+        if (name === "") {
+
+            throw new Error(
+                "Please enter your name."
+            );
+        }
+
+        code = `#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string name =
+        "${escapeCppString(name)}";
+
+    cout << "Hello, "
+         << name
+         << "!";
+
+    return 0;
+}`;
+    }
+
+
+    /* =====================================================
+       REVERSE NUMBER
+    ===================================================== */
+
+    else if (
+        projectName === "reverseNumber"
+    ) {
+
+        const numberText =
+            getInputValue("number");
+
+        if (numberText === "") {
+
+            throw new Error(
+                "Please enter a number."
+            );
+        }
+
+        const number =
+            Number(numberText);
+
+        if (
+            !Number.isInteger(number)
+        ) {
+
+            throw new Error(
+                "Please enter a whole number."
+            );
+        }
+
+        code = code.replace(
+            "cin >> number;",
+            "number = " +
+            number +
+            ";"
+        );
+    }
+
+
+    /* =====================================================
+       PROGRAMS WITHOUT INPUT
+    ===================================================== */
+
+    else if (
+        projectName === "square" ||
+        projectName === "totalPrice" ||
+        projectName === "arrayValues"
+    ) {
+
+        code =
+            project.code;
+    }
+
+
+    return code;
 }
 
+
+/* =========================================================
+   RESET PROGRAM
+========================================================= */
+
+function resetProgram() {
+
+    if (!currentProject) {
+        return;
+    }
+
+    const project =
+        projectCodes[currentProject];
+
+    if (
+        project &&
+        Array.isArray(project.inputs)
+    ) {
+
+        project.inputs.forEach(
+            function (input) {
+
+                const field =
+                    document.getElementById(
+                        "input_" + input.id
+                    );
+
+                if (field) {
+
+                    field.value =
+                        input.value || "";
+                }
+            }
+        );
+    }
+
+    if (runOutput) {
+
+        runOutput.textContent =
+            "Ready to run program...";
+    }
+
+    if (copyMessage) {
+
+        copyMessage.textContent =
+            "";
+    }
+}
 
 
 /* =========================================================
@@ -1012,21 +1376,15 @@ int main()
 
 if (runButton) {
 
-
     runButton.addEventListener(
         "click",
         async function () {
 
-
             if (!currentProject) {
-
                 return;
-
             }
 
-
             let runtimeCode;
-
 
             try {
 
@@ -1036,82 +1394,57 @@ if (runButton) {
                     );
 
             }
-
             catch (error) {
 
-                runOutput.textContent =
-                    "Input Error:\n\n" +
-                    error.message;
+                if (runOutput) {
+
+                    runOutput.textContent =
+                        "Input Error:\n\n" +
+                        error.message;
+                }
 
                 return;
-
             }
-
 
             runButton.disabled =
                 true;
-
 
             if (resetButton) {
 
                 resetButton.disabled =
                     true;
-
             }
 
-
             runButton.textContent =
-                "⏳ Running...";
+                "Running...";
 
+            if (runOutput) {
 
-            runOutput.textContent =
-                "Compiling program...\n";
-
+                runOutput.textContent =
+                    "Compiling program...\n";
+            }
 
             try {
 
-
                 const response =
                     await fetch(
-
                         "https://wandbox.org/api/compile.json",
-
                         {
-
-                            method:
-                                "POST",
-
+                            method: "POST",
 
                             headers: {
-
                                 "Content-Type":
                                     "application/json"
-
                             },
 
-
-                            body:
-
-                                JSON.stringify({
-
-                                    code:
-                                        runtimeCode,
-
-                                    compiler:
-                                        "gcc-head",
-
-                                    options:
-                                        "gnu++17",
-
-                                    stdin:
-                                        ""
-
-                                })
-
+                            body: JSON.stringify({
+                                code: runtimeCode,
+                                compiler: "gcc-head",
+                                options: "gnu++17",
+                                stdin: ""
+                            })
                         }
-
                     );
-
 
                 if (!response.ok) {
 
@@ -1119,200 +1452,134 @@ if (runButton) {
                         "Compiler server error: HTTP " +
                         response.status
                     );
-
                 }
-
 
                 const result =
                     await response.json();
 
-
                 let output = "";
 
 
-                if (
-                    result.compiler_error
-                ) {
+                if (result.compiler_error) {
 
                     output +=
                         result.compiler_error;
-
                 }
 
 
-                if (
-                    result.compiler_output
-                ) {
+                if (result.program_error) {
 
-                    output +=
-                        result.compiler_output;
-
-                }
-
-
-                if (
-                    result.program_output
-                ) {
-
-                    output +=
-                        result.program_output;
-
-                }
-
-
-                if (
-                    result.program_error
-                ) {
+                    if (output !== "") {
+                        output += "\n";
+                    }
 
                     output +=
                         result.program_error;
-
                 }
 
 
-                if (
-                    output.trim() === ""
-                ) {
+                if (result.program_output) {
 
+                    if (output !== "") {
+                        output += "\n";
+                    }
+
+                    output +=
+                        result.program_output;
+                }
+
+
+                if (result.program_message) {
 
                     if (
+                        !output.includes(
+                            result.program_message
+                        )
+                    ) {
 
+                        if (output !== "") {
+                            output += "\n";
+                        }
+
+                        output +=
+                            result.program_message;
+                    }
+                }
+
+
+                if (output.trim() === "") {
+
+                    if (
                         result.status === 0 ||
-
                         result.status === "0"
-
                     ) {
 
                         output =
-                            "Program finished successfully.\n" +
-                            "No output.";
-
+                            "Program finished successfully.";
                     }
-
                     else {
 
                         output =
                             "Program finished without output.";
-
                     }
-
                 }
 
 
-                runOutput.textContent =
-                    output;
+                if (runOutput) {
 
+                    runOutput.textContent =
+                        output;
+                }
             }
-
 
             catch (error) {
 
+                console.error(
+                    "Run error:",
+                    error
+                );
 
-                console.error(error);
+                if (runOutput) {
 
-
-                runOutput.textContent =
-
-                    "Unable to run program.\n\n" +
-
-                    error.message +
-
-                    "\n\n" +
-
-                    "Make sure you have an internet connection.";
-
+                    runOutput.textContent =
+                        "Unable to run program.\n\n" +
+                        error.message;
+                }
             }
 
+            finally {
 
-            runButton.disabled =
-                false;
-
-
-            if (resetButton) {
-
-                resetButton.disabled =
+                runButton.disabled =
                     false;
 
+                if (resetButton) {
+
+                    resetButton.disabled =
+                        false;
+                }
+
+                runButton.textContent =
+                    "Run Program";
             }
-
-
-            runButton.textContent =
-                "▶ Run Program";
-
-
         }
     );
-
 }
-
 
 
 /* =========================================================
-   RESET
+   RESET BUTTON
 ========================================================= */
-
-function resetProgram() {
-
-
-    if (!currentProject) {
-
-        return;
-
-    }
-
-
-    const project =
-        projectCodes[
-            currentProject
-        ];
-
-
-    if (project.inputs) {
-
-
-        project.inputs.forEach(
-            function (input) {
-
-
-                const field =
-                    document.getElementById(
-                        "input_" + input.id
-                    );
-
-
-                if (field) {
-
-                    field.value =
-                        input.value || "";
-
-                }
-
-            }
-        );
-
-    }
-
-
-    if (runOutput) {
-
-        runOutput.textContent =
-            "Ready to run program...";
-
-    }
-
-}
-
-
 
 if (resetButton) {
 
     resetButton.addEventListener(
         "click",
-        resetProgram
+        function () {
+
+            resetProgram();
+        }
     );
-
 }
-
 
 
 /* =========================================================
@@ -1321,107 +1588,114 @@ if (resetButton) {
 
 if (copyButton) {
 
-
     copyButton.addEventListener(
         "click",
         async function () {
 
+            if (!codeDisplay) {
+                return;
+            }
 
             const code =
-                codeDisplay.textContent;
-
+                codeDisplay.textContent || "";
 
             try {
 
+                if (
+                    navigator.clipboard &&
+                    typeof navigator.clipboard.writeText ===
+                    "function"
+                ) {
 
-                await navigator.clipboard.writeText(
-                    code
-                );
+                    await navigator.clipboard.writeText(
+                        code
+                    );
+                }
+                else {
 
+                    throw new Error(
+                        "Clipboard API unavailable."
+                    );
+                }
 
-                copyMessage.textContent =
-                    "Code copied successfully!";
+                if (copyMessage) {
 
+                    copyMessage.textContent =
+                        "Code copied successfully!";
+                }
             }
-
 
             catch (error) {
 
-
-                const temporary =
+                const textarea =
                     document.createElement(
                         "textarea"
                     );
 
-
-                temporary.value =
+                textarea.value =
                     code;
 
-
-                temporary.style.position =
+                textarea.style.position =
                     "fixed";
 
+                textarea.style.left =
+                    "-9999px";
 
-                temporary.style.opacity =
+                textarea.style.top =
                     "0";
 
+                textarea.style.opacity =
+                    "0";
 
                 document.body.appendChild(
-                    temporary
+                    textarea
                 );
 
+                textarea.focus();
+                textarea.select();
 
-                temporary.focus();
-
-
-                temporary.select();
-
+                let copied = false;
 
                 try {
 
-
-                    document.execCommand(
-                        "copy"
-                    );
-
-
-                    copyMessage.textContent =
-                        "Code copied successfully!";
-
+                    copied =
+                        document.execCommand(
+                            "copy"
+                        );
                 }
-
 
                 catch (copyError) {
 
-
-                    copyMessage.textContent =
-                        "Copy failed. Please copy the code manually.";
-
+                    copied = false;
                 }
 
-
                 document.body.removeChild(
-                    temporary
+                    textarea
                 );
 
-            }
+                if (copyMessage) {
 
+                    copyMessage.textContent =
+                        copied
+                            ? "Code copied successfully!"
+                            : "Copy the code manually.";
+                }
+            }
 
             setTimeout(
                 function () {
 
-                    copyMessage.textContent =
-                        "";
+                    if (copyMessage) {
 
+                        copyMessage.textContent =
+                            "";
+                    }
                 },
                 2000
             );
-
         }
     );
-
 }
-
 
 
 /* =========================================================
@@ -1430,24 +1704,25 @@ if (copyButton) {
 
 function closeCode() {
 
-
     if (!modal) {
-
         return;
-
     }
-
 
     modal.classList.remove(
         "show"
     );
 
+    modal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
 
     document.body.style.overflow =
-        "auto";
+        "";
 
+    currentProject =
+        null;
 }
-
 
 
 if (closeModalButton) {
@@ -1456,9 +1731,7 @@ if (closeModalButton) {
         "click",
         closeCode
     );
-
 }
-
 
 
 if (modal) {
@@ -1467,277 +1740,384 @@ if (modal) {
         "click",
         function (event) {
 
-
             if (
                 event.target === modal
             ) {
 
                 closeCode();
-
             }
-
         }
     );
-
 }
 
 
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
 
 document.addEventListener(
     "keydown",
     function (event) {
 
-
         if (
-
             event.key === "Escape" &&
-
             modal &&
-
-            modal.classList.contains(
-                "show"
-            )
-
+            modal.classList.contains("show")
         ) {
 
             closeCode();
-
         }
-
     }
 );
 
 
-
 /* =========================================================
-   CONTACT FORM
+   MOBILE MENU
 ========================================================= */
 
-const contactForm =
-    document.getElementById(
-        "contactForm"
-    );
+if (
+    menuBtn &&
+    navLinks
+) {
 
+    menuBtn.addEventListener(
+        "click",
+        function () {
 
-const formMessage =
-    document.getElementById(
-        "formMessage"
-    );
-
-
-if (contactForm) {
-
-
-    contactForm.addEventListener(
-        "submit",
-        function (event) {
-
-
-            event.preventDefault();
-
-
-            const name =
-                document.getElementById(
-                    "name"
-                ).value.trim();
-
-
-            const email =
-                document.getElementById(
-                    "email"
-                ).value.trim();
-
-
-            const message =
-                document.getElementById(
-                    "message"
-                ).value.trim();
-
-
-            if (
-
-                name === "" ||
-
-                email === "" ||
-
-                message === ""
-
-            ) {
-
-                formMessage.textContent =
-                    "Please complete all fields.";
-
-                return;
-
-            }
-
-
-
-            /*
-               IMPORTANT:
-               Replace this with your real email
-               if you want messages to go directly
-               to your email.
-            */
-
-            const myEmail =
-                "hannahkim@example.com";
-
-
-            const subject =
-                encodeURIComponent(
-                    "Portfolio Message from " +
-                    name
+            const isOpen =
+                navLinks.classList.toggle(
+                    "show"
                 );
 
-
-            const body =
-                encodeURIComponent(
-
-                    "Hello Hannah!\n\n" +
-
-                    "Name: " +
-                    name +
-
-                    "\nEmail: " +
-                    email +
-
-                    "\n\nMessage:\n" +
-                    message
-
-                );
-
-
-            formMessage.textContent =
-                "Opening your email application...";
-
-
-            window.location.href =
-
-                "mailto:" +
-
-                myEmail +
-
-                "?subject=" +
-
-                subject +
-
-                "&body=" +
-
-                body;
-
+            menuBtn.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
         }
     );
-
 }
 
 
+document.querySelectorAll(
+    ".nav-link"
+).forEach(
+    function (link) {
+
+        link.addEventListener(
+            "click",
+            function () {
+
+                if (navLinks) {
+
+                    navLinks.classList.remove(
+                        "show"
+                    );
+                }
+
+                if (menuBtn) {
+
+                    menuBtn.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+            }
+        );
+    }
+);
+
 
 /* =========================================================
-   SMOOTH SCROLL
+   ACTIVE NAVIGATION
 ========================================================= */
 
-document
-    .querySelectorAll(
-        'a[href^="#"]'
-    )
-    .forEach(
-        function (link) {
+const sections =
+    document.querySelectorAll(
+        "section"
+    );
 
-
-            link.addEventListener(
-                "click",
-                function (event) {
-
-
-                    const targetId =
-                        this.getAttribute(
-                            "href"
-                        );
-
-
-                    if (
-
-                        targetId === "#" ||
-
-                        targetId === ""
-
-                    ) {
-
-                        return;
-
-                    }
-
-
-                    const target =
-                        document.querySelector(
-                            targetId
-                        );
-
-
-                    if (target) {
-
-
-                        event.preventDefault();
-
-
-                        target.scrollIntoView({
-
-                            behavior:
-                                "smooth",
-
-                            block:
-                                "start"
-
-                        });
-
-                    }
-
-                }
-            );
-
-        }
+const navItems =
+    document.querySelectorAll(
+        ".nav-link"
     );
 
 
+function updateActiveNavigation() {
+
+    if (!sections.length) {
+        return;
+    }
+
+    let current = "";
+
+    sections.forEach(
+        function (section) {
+
+            const top =
+                section.offsetTop - 180;
+
+            if (
+                window.scrollY >= top
+            ) {
+
+                current =
+                    section.getAttribute(
+                        "id"
+                    ) || "";
+            }
+        }
+    );
+
+    navItems.forEach(
+        function (link) {
+
+            link.classList.remove(
+                "active"
+            );
+
+            if (
+                current &&
+                link.getAttribute("href") ===
+                "#" + current
+            ) {
+
+                link.classList.add(
+                    "active"
+                );
+            }
+        }
+    );
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateActiveNavigation,
+    {
+        passive: true
+    }
+);
+
 
 /* =========================================================
-   RESIZE
+   CLOSE MOBILE MENU ON RESIZE
 ========================================================= */
 
 window.addEventListener(
     "resize",
     function () {
 
-
         if (
-
             window.innerWidth > 850 &&
-
             navLinks
-
         ) {
 
             navLinks.classList.remove(
                 "show"
             );
 
+            if (menuBtn) {
+
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
         }
 
+        updateActiveNavigation();
     }
 );
 
 
-
 /* =========================================================
-   PAGE LOADED
+   SMOOTH SCROLL
 ========================================================= */
 
-console.log(
-    "Hannah Kim Portfolio loaded."
+document.querySelectorAll(
+    'a[href^="#"]'
+).forEach(
+    function (link) {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    this.getAttribute(
+                        "href"
+                    );
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+
+                    return;
+                }
+
+                let target = null;
+
+                try {
+
+                    target =
+                        document.querySelector(
+                            targetId
+                        );
+                }
+
+                catch (error) {
+
+                    return;
+                }
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
+            }
+        );
+    }
 );
 
 
-console.log(
-    "C++ interactive runner ready."
-);
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+if (contactForm) {
+
+    contactForm.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+            const nameField =
+                document.getElementById(
+                    "name"
+                );
+
+            const emailField =
+                document.getElementById(
+                    "email"
+                );
+
+            const messageField =
+                document.getElementById(
+                    "message"
+                );
+
+
+            const name =
+                nameField
+                    ? nameField.value.trim()
+                    : "";
+
+
+            const email =
+                emailField
+                    ? emailField.value.trim()
+                    : "";
+
+
+            const message =
+                messageField
+                    ? messageField.value.trim()
+                    : "";
+
+
+            if (
+                !name ||
+                !email ||
+                !message
+            ) {
+
+                if (formMessage) {
+
+                    formMessage.textContent =
+                        "Please complete all fields.";
+                }
+
+                return;
+            }
+
+
+            if (
+                emailField &&
+                !emailField.checkValidity()
+            ) {
+
+                if (formMessage) {
+
+                    formMessage.textContent =
+                        "Please enter a valid email address.";
+                }
+
+                return;
+            }
+
+
+            if (formMessage) {
+
+                formMessage.textContent =
+                    "Thank you! Your message is ready to send.";
+            }
+        }
+    );
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+function initializePortfolio() {
+
+    if (
+        modal &&
+        !modal.classList.contains("show")
+    ) {
+
+        document.body.style.overflow =
+            "";
+    }
+
+
+    if (menuBtn) {
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+    }
+
+
+    updateActiveNavigation();
+
+
+    console.log(
+        "Hannah Kim Portfolio is ready."
+    );
+}
+
+
+if (
+    document.readyState === "loading"
+) {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        initializePortfolio
+    );
+}
+
+else {
+
+    initializePortfolio();
+}
